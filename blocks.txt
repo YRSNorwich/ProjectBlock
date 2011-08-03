@@ -1,0 +1,21 @@
+#!/usr/bin/env python2
+#import pdb
+#pdb.set_trace()
+import mclevel
+
+level = mclevel.fromFile("WaterWorld/level.dat")
+
+#load the text map of the uk
+tm = open('UK.txt', 'r')
+uk = tm.readlines()
+
+# iterate through the lines 
+for x, row in enumerate(uk):
+  # iterate through the characters in the line
+  for z, block in enumerate(row.strip().replace(',','')-):
+    if block == '1':
+       level.setBlockAt(x, 10, z, 3)
+  
+
+level.saveInPlace()
+
