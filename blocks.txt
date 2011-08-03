@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
-#import pdb
-#pdb.set_trace()
+import pdb
+pdb.set_trace()
 import mclevel
 
 level = mclevel.fromFile("WaterWorld/level.dat")
@@ -12,9 +12,9 @@ uk = tm.readlines()
 # iterate through the lines 
 for x, row in enumerate(uk):
   # iterate through the characters in the line
-  for z, block in enumerate(row.strip().replace(',','')-):
+  for z, block in enumerate(row.strip().replace(',','')):
     if block == '1':
-       level.setBlockAt(x, 10, z, 3)
+       level.setBlockAt(x - 512, 11, z - 512, 3)
   
 
 level.saveInPlace()
