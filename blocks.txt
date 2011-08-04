@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
-import pdb
-pdb.set_trace()
+#import pdb
+#pdb.set_trace()
 import mclevel
 from materials import materials
 from BroadBandData.wrangler import blockify_geojson
@@ -11,7 +11,7 @@ SEA = 9
 BBSPEEDS = [materials.Brick.ID, materials.BlockofGold.ID ,materials.JackOLantern.ID]
 BASE_MAP_HEIGHT = 10
 
-level = mclevel.fromFile("WaterWorldBig/level.dat")
+level = mclevel.fromFile("WaterWorldFinal/level.dat")
 
 data = blockify_geojson("BroadBandData/city_speeds.json")
 
@@ -37,11 +37,11 @@ for z, row in enumerate(uk):
         level.setBlockAt(mcx - 512, BASE_MAP_HEIGHT + height, z - 512, block_type)
       print 'data at' , charpos, z, 'for minecraft', mcx, z
     else:
-      level.setBlockAt(mcx - 512, BASE_MAP_HEIGHT, z - 512, (char == '1') and GRASS or SEA)
+      level.setBlockAt(mcx + 175, BASE_MAP_HEIGHT, z - 281, (char == '1') and GRASS or SEA)
       print mcx, z
 
-level.setPlayerSpawnPosition((1000,30,250))  
-level.setPlayerPosition((1000,30,250))
+level.setPlayerSpawnPosition((175,30,-281))  
+level.setPlayerPosition((175,30,-281))
 
 level.saveInPlace()
 
