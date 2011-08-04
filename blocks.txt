@@ -34,14 +34,14 @@ for z, row in enumerate(uk):
           block_type = BBSPEEDS[1]
         if height > 15:
           block_type = BBSPEEDS[2]
-        level.setBlockAt(mcx - 512, BASE_MAP_HEIGHT + height, z - 512, block_type)
+        level.setBlockAt(mcx + 175, BASE_MAP_HEIGHT + height, z - 281, block_type)
       print 'data at' , charpos, z, 'for minecraft', mcx, z
     else:
       level.setBlockAt(mcx + 175, BASE_MAP_HEIGHT, z - 281, (char == '1') and GRASS or SEA)
       print mcx, z
 
-level.setPlayerSpawnPosition((175,30,-281))  
-level.setPlayerPosition((175,30,-281))
+level.setPlayerSpawnPosition((mcx,30,z))  
+level.setPlayerPosition((mcx,30,z))
 
 level.saveInPlace()
 
