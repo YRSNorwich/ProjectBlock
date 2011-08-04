@@ -2,19 +2,42 @@
 import pdb
 pdb.set_trace()
 import mclevel
+from BroadBandData.wrangler import blockify_geojson
 
+GRASS = 2
+SEA = 9
+BBSPEEDS = [21,22,25]
+BASE_MAP_HEIGHT = 11
 level = mclevel.fromFile("WaterWorld/level.dat")
+
+data = blockify_geojson("BroadBandData/city_speeds.json")
 
 #load the text map of the uk
 tm = open('UK.txt', 'r')
 uk = tm.readlines()
 
 # iterate through the lines 
-for x, row in enumerate(uk):
+for z, row in enumerate(uk):
   # iterate through the characters in the line
-  for z, block in enumerate(row.strip().replace(',','')):
-    if block == '1':
-       level.setBlockAt(x - 512, 11, z - 512, 3)
+  row = row.strip().replace(',','')
+  for charpos, char in enumerate(row):
+    mcx = len(row) - charpos
+    speeddata = data.get(len(row) - charpos, {}).get(len(uk) - z, {})
+    if speeddata:
+      speed = int(round(speeddata[0]['bbspeed']/1000))
+      block_type = BBSPEEDS[0]
+      for height in range(1, speed):
+        if height > 4:
+          block_type = BBSPEEDS[1]
+        if height > 15:
+          block_type = BBSPEEDS[2]
+        level.setBlockAt(mcx - 512, BASE_MAP_HEIGHT + height, z - 512, block_type)
+      print 'data at' , charpos, z, 'for minecraft', mcx, z
+    else:
+      level.setBlockAt(mcx - 512, BASE_MAP_HEIGHT, z - 512, (char == '1') and GRASS or SEA)
+      print mcx, z
+  
+  
   
 
 level.saveInPlace()
