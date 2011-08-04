@@ -1,0 +1,150 @@
+{
+
+    "type": "FeatureCollection",
+    "features": [
+        {   "type":"Feature",
+            "id":1,
+            "geometry":{
+                        "type": "Point",
+                        "coordinates": [
+                            1.2956997,
+                            52.6333618
+                        ]
+                    },
+            "properties": { "bbspeed":17000,
+                            "label":"Norwich"}
+        },
+        {   "type":"Feature",
+            "id":2,
+            "geometry":{
+                        "type": "Point",
+                        "coordinates": [
+                            1.1207841,
+                            52.0446001
+                        ]
+                    },
+            "properties": { "bbspeed":4730,
+                            "label":"Ipswich"}
+        },
+        {   "type":"Feature",
+            "id":3,
+            "geometry":{
+                        "type": "Point",
+                        "coordinates": [
+                            -0.1016066,
+                            51.5388444
+                        ]
+                    },
+            "properties": { "bbspeed":2100,
+                            "label":"London - Guardian"}
+        },
+        {   "type":"Feature",
+            "id":4,
+            "geometry":{
+                        "type": "Point",
+                        "coordinates": [
+                            -0.1025795,
+                            51.5132706
+                        ]
+                    },
+            "properties": { "bbspeed":4390,
+                            "label":"London - Fluxx"}
+        },
+        {   "type":"Feature",
+            "id":5,
+            "geometry":{
+                        "type": "Point",
+                        "coordinates": [
+                            -0.1343033,
+                            51.4983844
+                        ]
+                    },
+            "properties": { "bbspeed":4730,
+                            "label":"London - Osmosoft"}
+        },
+        {   "type":"Feature",
+            "id":6,
+            "geometry":{
+                        "type": "Point",
+                        "coordinates": [
+                            -0.5879458,
+                            51.2425718
+                        ]
+                    },
+            "properties": { "bbspeed":6000,
+                            "label":"Guildford"}
+        },{   "type":"Feature",
+            "id":7,
+            "geometry":{
+                        "type": "Point",
+                        "coordinates": [
+                            -2.5948069,
+                            51.4519698
+                        ]
+                    },
+            "properties": { "bbspeed":4000,
+                            "label":"Bristol"}
+        },
+        {   "type":"Feature",
+            "id":8,
+            "geometry":{
+                        "type": "Point",
+                        "coordinates": [
+                            -5.2758098,
+                            50.2262046
+                        ]
+                    },
+            "properties": { "bbspeed":20000,
+                            "label":"Poole"}
+        },
+        {   "type":"Feature",
+            "id":9,
+            "geometry":{
+                        "type": "Point",
+                        "coordinates": [
+                            -0.7431981,
+                            51.9973125
+                        ]
+                    },
+            "properties": { "bbspeed":14000,
+                            "label":"Milton Keynes"}
+        },
+        {   "type":"Feature",
+            "id":10,
+            "geometry":{
+                        "type": "Point",
+                        "coordinates": [
+                            -1.8985158,
+                            52.4762241
+                        ]
+                    },
+            "properties": { "bbspeed":4000,
+                            "label":"Birmingham"}
+        },
+        {   "type":"Feature",
+            "id":11,
+            "geometry":{
+                        "type": "Point",
+                        "coordinates": [
+                            -1.6211927,
+                            54.9675589
+                        ]
+                    },
+            "properties": { "bbspeed":10000,
+                            "label":"Newcastle"}
+        },
+        {   "type":"Feature",
+            "id":12,
+            "geometry":{
+                        "type": "Point",
+                        "coordinates": [
+                            -2.2363113,
+                            53.4841175
+                        ]
+                    },
+            "properties": { "bbspeed":20000,
+                            "label":"Manchester"}
+        }
+    ]
+}
+
