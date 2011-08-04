@@ -2,12 +2,15 @@
 import pdb
 pdb.set_trace()
 import mclevel
+from materials import materials
 from BroadBandData.wrangler import blockify_geojson
 
 GRASS = 2
 SEA = 9
-BBSPEEDS = [21,22,25]
+
+BBSPEEDS = [materials.Brick.ID, materials.BlockOfGold.ID ,materials.JackOLantern.ID]
 BASE_MAP_HEIGHT = 11
+
 level = mclevel.fromFile("WaterWorld/level.dat")
 
 data = blockify_geojson("BroadBandData/city_speeds.json")
@@ -38,7 +41,8 @@ for z, row in enumerate(uk):
       print mcx, z
   
   
-  
+level.setPlayerSpawn((1000,30,250))  
+level.setPlayerPosition((1000,30,250))
 
 level.saveInPlace()
 
